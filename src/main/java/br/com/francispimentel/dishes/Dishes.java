@@ -54,8 +54,8 @@ public class Dishes {
 	}
 
 	private String generateOutput(Map<DishOption, Integer> order, boolean showError) {
-		List<DishOption> orderedOutput = new ArrayList<>(order.keySet());
-		Collections.sort(orderedOutput, new Comparator<DishOption>() {
+		List<DishOption> sortedOutput = new ArrayList<>(order.keySet());
+		Collections.sort(sortedOutput, new Comparator<DishOption>() {
 
 			@Override
 			public int compare(DishOption o1, DishOption o2) {
@@ -64,7 +64,7 @@ public class Dishes {
 		});
 
 		StringBuffer output = new StringBuffer();
-		for (DishOption dish : orderedOutput) {
+		for (DishOption dish : sortedOutput) {
 			if (output.length() > 0) {
 				output.append(", ");
 			}
